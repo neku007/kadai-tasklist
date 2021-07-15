@@ -40,6 +40,7 @@ public class DeleteServlet extends HttpServlet {
             em.getTransaction().begin();
             em.remove(m);
             em.getTransaction().commit();
+            request.getSession().setAttribute("flush", "タスクを削除しました。");
             em.close();
 
             request.getSession().removeAttribute("task_id");
