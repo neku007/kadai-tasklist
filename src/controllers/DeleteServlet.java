@@ -35,7 +35,7 @@ public class DeleteServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Tasks m = em.find(Tasks.class, (Integer)(request.getSession().getAttribute("task_id")));
+            Tasks m = em.find(Tasks.class, (Integer)(request.getSession().getAttribute("tasks_id")));
 
             em.getTransaction().begin();
             em.remove(m);
@@ -43,7 +43,7 @@ public class DeleteServlet extends HttpServlet {
             request.getSession().setAttribute("flush", "タスクを削除しました。");
             em.close();
 
-            request.getSession().removeAttribute("task_id");
+            request.getSession().removeAttribute("tasks_id");
 
             response.sendRedirect(request.getContextPath() + "/index");
         }

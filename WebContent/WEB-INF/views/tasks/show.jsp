@@ -3,14 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:import url="../layout/layout.jsp">
     <c:param name="content">
-        <h2>id : ${task.id} のタスク詳細</h2>
+        <h2>id : ${tasks.id} のタスク詳細</h2>
 
-        <p>タスク：<c:out value="${task.content}" /></p>
-        <p>作成日時：<fmt:formatDate value="${task.create_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
-        <p>更新日時：<fmt:formatDate value="${task.update_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
+        <p>タスク：<c:out value="${tasks.content}" /></p>
+        <p>作成日時：<fmt:formatDate value="${tasks.create_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
+        <p>更新日時：<fmt:formatDate value="${tasks.update_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
 
 
-        <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">タスクの編集</a></p>
+        <p><a href="${pageContext.request.contextPath}/edit?id=${tasks.id}">タスクの編集</a></p>
 
         <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
 

@@ -38,7 +38,7 @@ public class ShowServlet extends HttpServlet {
 
         em.close();
 
-        request.setAttribute("task", m);
+        request.setAttribute("tasks", m);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/show.jsp");
         rd.forward(request, response);
